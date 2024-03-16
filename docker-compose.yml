@@ -8,4 +8,4 @@ services:
     volumes:
       - .:/app:rw  # Mount host and container directories for development/testing
     environment:
-      - FLASK_APP=app.py  # Set the Flask application entry point (adjust if needed)
+      - FLASK_APP=hello/app.py  # Set the Flask application entry point (adjust if needed)
