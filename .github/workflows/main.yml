@@ -46,15 +46,7 @@ jobs:
     steps:
       - if: failure()
         run: echo "Build failed!"
-
-  parallel:
-    needs: [build, test, Dockerize, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Task 1" &
-      - run: echo "Task 2" &
-      - wait
-
+        
   caching:
     needs: [build, test, Dockerize, deploy]
     runs-on: ubuntu-latest
