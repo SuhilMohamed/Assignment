@@ -1,0 +1,11 @@
+version: "3.8"  # Specify version
+
+services:
+  app:
+    build: .  # Build from the current directory (Dockerfile)
+    ports:
+      - "5000:5000"  # Map container port 5000 to host port 5000
+    volumes:
+      - .:/app:rw  # Mount host and container directories for development/testing
+    environment:
+      - FLASK_APP=app.py  # Set the Flask application entry point (adjust if needed)
