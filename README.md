@@ -51,7 +51,7 @@ flask run
 The applications will always running on http://localhost:5000.
 
 Version Control and CI/CD: ```bash
-There are three files in the .github folder: codeql.yml, docker-image.yml, and docker-publish.yml. These files are used for continuous integration and continuous deployment (CI/CD) using GitHub Actions.```
+There are three files in the .github folder: codeql.yml, docker-image.yml, and main.yml. These files are used for continuous integration and continuous deployment (CI/CD) using GitHub Actions.```
 
 Bash Scripting: ```bash
 There is a bash script named backup.sh in the root directory. This script is used to create a backup of a specified database. ```
