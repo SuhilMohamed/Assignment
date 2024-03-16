@@ -54,7 +54,7 @@ Version Control and CI/CD: ```bash
 There are three files in the .github folder: codeql.yml, docker-image.yml, and main.yml. These files are used for continuous integration and continuous deployment (CI/CD) using GitHub Actions.```
 
 Bash Scripting: ```bash
-There is a bash script named backup.sh in the root directory. This script is used to create a backup of a specified database. ```
+There is a bash script named backup.sh in the root directory. This script is used to create a backup of a specified database.```
 
 Terraform: ```bash
 There is a Terraform file named main.tf in the terraform folder. This file is used to create an EC2 instance with Ubuntu OS on AWS.```
