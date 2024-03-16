@@ -47,8 +47,8 @@ resource "aws_security_group" "app_sg" {
   vpc_id = aws_vpc.app_vpc.id
 
   ingress {
-    from_port = 80
-    to_port   = 80
+    from_port = 5000
+    to_port   = 5000
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow access from anywhere for simplicity (adjust for production)
   }
@@ -107,4 +107,7 @@ resource "aws_rds_cluster" "db_cluster" {
 
 # Create an EC2 instance for the application
 resource "aws_instance" "app_instance" {
-  ami           = "ami-01234567890abcdef0"  
+  ami           = "ami-01234567890abcdef0"
+
+  # Other resource configuration (e.g., instance type, security groups, etc.)
+}
