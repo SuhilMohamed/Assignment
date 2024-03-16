@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flask:$(date +%s)
     - name: Run Docker Container
-      run: docker run --name flask -d flask
+      run: docker run --name app -d flask
