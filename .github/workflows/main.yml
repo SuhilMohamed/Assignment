@@ -15,40 +15,20 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python app.py test
 
-  test:
+  Dockerize:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - run: pip install -r requirements.txt
-      - run: python app.py test
-
-  Dockerize:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: docker build -t flask .
+      - run: docker build -t flask:latest .
 
   deploy:
     needs: Dockerize
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: docker run -d -p 9000:5000 flask
+      - run: docker run -d -p 9000:5000 flask:latest
 
-  failure:
-    needs: [build, test, Dockerize, deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - if: failure()
-        run: echo "Build failed!"
-        
   caching:
-    needs: [build, test, Dockerize, deploy]
+    needs: [build, Dockerize]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/cache@v2
@@ -57,10 +37,9 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
 
   automation-tests:
-    needs: [build, test, Dockerize, deploy]
+    needs: [build, Dockerize]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
