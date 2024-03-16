@@ -56,6 +56,8 @@ There are three files in the .github folder: codeql.yml, docker-image.yml, and d
 Bash Scripting: ```bash
 There is a bash script named backup.sh in the root directory. This script is used to create a backup of a specified database.```
 
-Terraform: There is a Terraform file named main.tf in the terraform folder. This file is used to create an EC2 instance with Ubuntu OS on AWS.
+Terraform: ```bash
+There is a Terraform file named main.tf in the terraform folder. This file is used to create an EC2 instance with Ubuntu OS on AWS.```
 
-Hosting: There is a .conf file named reverse-proxy in the root directory. This file contains the configuration for a reverse proxy.
+Hosting: ```bash
+There is a .conf file named reverse-proxy in the root directory. This file contains the configuration for a reverse proxy.```
